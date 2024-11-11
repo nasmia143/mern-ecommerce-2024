@@ -11,6 +11,9 @@ const { defineConfig, devices } = require('@playwright/test');
  * @see https://playwright.dev/docs/test-configuration
  */
 module.exports = defineConfig({
+  /*ajout*/
+  globalSetup: './global-Setup',
+
   testDir: './.',
   /* Run tests in files in parallel */
   fullyParallel: true,
@@ -29,18 +32,27 @@ module.exports = defineConfig({
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
+    /*ajout*/
+    storageState:"./test/client/.auth/user.json"
   },
 
   /* Configure projects for major browsers */
   projects: [
+    //{ name: 'setup', testMatch: '**/*.setup.js' },
     {
       name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      use: { ...devices['Desktop Chrome'] ,
+         //storageState: '.auth/user.json',
+      },
+     //dependencies: ['setup'],
     },
 
     {
       name: 'firefox',
-      use: { ...devices['Desktop Firefox'] },
+      use: { ...devices['Desktop Firefox'] 
+
+      },
+      //dependencies: ['setup'],
     },
 
     {
