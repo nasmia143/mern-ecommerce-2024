@@ -1,0 +1,356 @@
+[
+  {
+    "description": "As user, i would like to connect to my account",
+    "elements": [
+      {
+        "description": "",
+        "id": "login;login-succes",
+        "keyword": "Scenario",
+        "line": 4,
+        "name": "Login succes",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "I'm in sign in page",
+            "match": {
+              "location": "steps\\signin.js:8"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1044236199
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 6,
+            "name": "I enter the email \"anne.test@gmail.com\"",
+            "match": {
+              "location": "steps\\signin.js:15"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1231910099
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "I enter the password \"@@anne@@\"",
+            "match": {
+              "location": "steps\\signin.js:21"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 25701699
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 8,
+            "name": "I click the Sign In button",
+            "match": {
+              "location": "steps\\signin.js:27"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 73319700
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 9,
+            "name": "I'm redirected to the home page",
+            "match": {
+              "location": "steps\\signin.js:34"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2160985800
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "login;login-with-invatlid-email",
+        "keyword": "Scenario",
+        "line": 11,
+        "name": "Login with invatlid email",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 12,
+            "name": "I'm in sign in page",
+            "match": {
+              "location": "steps\\signin.js:8"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 990867299
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 13,
+            "name": "I enter the email \"anne.testgmail.com\"",
+            "match": {
+              "location": "steps\\signin.js:15"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1080130699
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 14,
+            "name": "I enter the password \"@@anne@@\"",
+            "match": {
+              "location": "steps\\signin.js:21"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 45217199
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 15,
+            "name": "I click the Sign In button",
+            "match": {
+              "location": "steps\\signin.js:27"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 62091399
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 16,
+            "name": "I'm staying on the sign in page",
+            "match": {
+              "location": "steps\\signin.js:39"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 16559299
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 17,
+            "name": "I have the error message \"Sign in to your account\"",
+            "match": {
+              "location": "steps\\signin.js:43"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 630176899
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "login;login-with-wrong-password",
+        "keyword": "Scenario",
+        "line": 19,
+        "name": "Login with wrong password",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 20,
+            "name": "I'm in sign in page",
+            "match": {
+              "location": "steps\\signin.js:8"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 935191400
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 21,
+            "name": "I enter the email \"anne.test@gmail.com\"",
+            "match": {
+              "location": "steps\\signin.js:15"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1223366500
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 22,
+            "name": "I enter the password \"@@appwrite@\"",
+            "match": {
+              "location": "steps\\signin.js:21"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 31339599
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 23,
+            "name": "I click the Sign In button",
+            "match": {
+              "location": "steps\\signin.js:27"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 51310199
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 24,
+            "name": "I'm staying on the sign in page",
+            "match": {
+              "location": "steps\\signin.js:39"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 9955600
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 25,
+            "name": "I have the error message \"Incorrect password! Please try again\"",
+            "match": {
+              "location": "steps\\signin.js:43"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1421806299
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "login;login-with-wrong-password",
+        "keyword": "Scenario",
+        "line": 27,
+        "name": "Login with wrong password",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 28,
+            "name": "I'm in sign in page",
+            "match": {
+              "location": "steps\\signin.js:8"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1072629000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 29,
+            "name": "I enter the email \"nasmia@gmail.com\"",
+            "match": {
+              "location": "steps\\signin.js:15"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1182778100
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 30,
+            "name": "I enter the password \"nasmia\"",
+            "match": {
+              "location": "steps\\signin.js:21"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 25911300
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 31,
+            "name": "I click the Sign In button",
+            "match": {
+              "location": "steps\\signin.js:27"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 70201399
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 32,
+            "name": "I'm staying on the sign in page",
+            "match": {
+              "location": "steps\\signin.js:39"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 16195600
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 33,
+            "name": "I have the error message \"User doesn't exists! Please register first\"",
+            "match": {
+              "location": "steps\\signin.js:43"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 705605700
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "login",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Login",
+    "tags": [],
+    "uri": "features\\signin.feature"
+  }
+]
