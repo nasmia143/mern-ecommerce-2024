@@ -12,7 +12,7 @@ await page.getByRole('button',{name: 'Sign In'}).click();
 
 await expect(page).toHaveURL("http://localhost:5173/shop/home");
 
-await page.context().storageState({path:"./test/client/.auth/user.json"})
+await page.context().storageState({path:"./test/e2e/client/.auth/user.json"})
 
 await browser.close();
 }

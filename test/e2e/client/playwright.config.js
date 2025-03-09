@@ -33,7 +33,7 @@ module.exports = defineConfig({
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
     /*ajout*/
-    storageState:"./test/client/.auth/user.json"
+    storageState:"./test/e2e/client/.auth/user.json"
   },
 
   /* Configure projects for major browsers */
@@ -45,19 +45,6 @@ module.exports = defineConfig({
          //storageState: '.auth/user.json',
       },
      //dependencies: ['setup'],
-    },
-
-    {
-      name: 'firefox',
-      use: { ...devices['Desktop Firefox'] 
-
-      },
-      //dependencies: ['setup'],
-    },
-
-    {
-      name: 'webkit',
-      use: { ...devices['Desktop Safari'] },
     },
 
     /* Test against mobile viewports. */
