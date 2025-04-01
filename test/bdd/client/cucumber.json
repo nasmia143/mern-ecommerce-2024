@@ -1,7 +1,7 @@
 {
     "default": {
         "paths": [
-            "**/features/"
+            "**/features/*.feature"
         ],
         "require": [
             "**/steps/*.js"
@@ -15,8 +15,7 @@
                 "cucumber-report.html"
             ],
             "summary",
-            "progress-bar",
-            "json:./cucumber-report.json"
+            "progress-bar"
         ]
     }
 }

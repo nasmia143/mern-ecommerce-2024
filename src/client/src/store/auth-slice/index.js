@@ -11,6 +11,8 @@ export const registerUser = createAsyncThunk(
   "/auth/register",
 
   async (formData) => {
+    if(formData.password==='' || formData.email===''|| formData.userName==='')
+      return null;
     const response = await axios.post(
       "http://localhost:5000/api/auth/register",
       formData,

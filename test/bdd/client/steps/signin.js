@@ -6,22 +6,19 @@ let browser;
 let page;
 
 Given(`I'm in sign in page`, async () => {
-    browser= await chromium.launch({headless: false});
+    browser= await chromium.launch({headless: true});
    page = await browser.newPage();
     page.goto("http://localhost:5173/auth/login");
-   console.log("Sign In page");
 });
 
-Given(`I enter the email {string}`, async(email) => {
+Given(`I enter the email login {string}`, async(email) => {
     await page.getByPlaceholder("Enter your email")
     .fill(email);
-    console.log("Email: "+email);
 });
 
-Given(`I enter the password {string}`, async (password) => {
+Given(`I enter the password login {string}`, async (password) => {
     await page.getByPlaceholder("Enter your password")
-    .fill(password)
-    console.log("Password: "+password);
+    .fill(password);
 });
 
 When(`I click the Sign In button`, async() => {
@@ -40,9 +37,8 @@ Then(`I'm staying on the sign in page`, async() => {
     await expect(page).toHaveURL("http://localhost:5173/auth/login");
 });
 
-Then(`I have the error message {string}`, async (errorMessage) => {
+Then(`I have the error message login {string}`, async (errorMessage) => {
     await expect(page.getByText(errorMessage, { exact: true })).toBeVisible();
-    console.log("Error Message: "+errorMessage);
     await browser.close();
 });
 
