@@ -20,6 +20,7 @@ function AuthRegister() {
 
   function onSubmit(event) {
     event.preventDefault();
+    let messageError='';
     dispatch(registerUser(formData)).then((data) => {
       if (data?.payload?.success) {
         toast({
@@ -27,8 +28,17 @@ function AuthRegister() {
         });
         navigate("/auth/login");
       } else {
+        if(formData.userName===''){
+          messageError='The username is required\n';
+        }
+        if(formData.email===''){
+          messageError=messageError+'The email is required\n';
+        }
+        if(formData.password===''){
+          messageError=messageError+'The password is required\n';
+        }
         toast({
-          title: data?.payload?.message,
+          title: messageError!==''?messageError:data?.payload?.message,
           variant: "destructive",
         });
       }
