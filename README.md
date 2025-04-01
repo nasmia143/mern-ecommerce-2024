@@ -29,6 +29,7 @@ L'objectif de ce projet est de fournir une suite de tests automatisés pour assu
     * Gherkin
     * Playwright
     * Cucumber
+    * [Rapport-Execution-Tests](https://nasmia143.github.io/mern-ecommerce-2024/)
 * **Application Testée :**
     * React (Frontend)
     * Node.js/Express.js (Backend)
