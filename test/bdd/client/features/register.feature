@@ -43,4 +43,4 @@ And I enter the email register "daviduser.com"
 And I enter the password register "david123"
 When I click on the Sign Up button
 Then I remind in the Register page 
-And I have the error message register "Veuillez incluire @ dans l'adresse e-mail."
+And I have the error message register "The email format is invalid"
