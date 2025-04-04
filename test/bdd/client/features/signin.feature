@@ -9,13 +9,13 @@ Scenario: Login succes
     When I click the Sign In button
     Then I'm redirected to the home page 
 
-Scenario: Login with invatlid email
+Scenario: Login with invatlid email format
     Given I'm in sign in page
     And I enter the email login "anne.testgmail.com"
     And I enter the password login "@@anne@@"
     When I click the Sign In button
     Then I'm staying on the sign in page
-    And I have the error message login "Sign in to your account"
+    And I have the error message login "The email format is invalid"
 
 Scenario: Login with wrong password
     Given I'm in sign in page
@@ -25,7 +25,7 @@ Scenario: Login with wrong password
     Then I'm staying on the sign in page 
     And I have the error message login "Incorrect password! Please try again"
 
-Scenario: Login with wrong password
+Scenario: Login with wrong email
     Given I'm in sign in page
     And I enter the email login "nasmia@gmail.com"
     And I enter the password login "nasmia"

@@ -55,5 +55,5 @@ Then(`I remind in the Register page`, async() => {
 
 
 Then(`I have the error message register {string}`, async (errorMessage) => {
-   await expect(page.getByText(errorMessage, { exact: true, })).toBeVisible();
+   await expect(page.getByText(errorMessage, { exact: true })).toBeVisible();
 });
