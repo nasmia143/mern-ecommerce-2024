@@ -17,10 +17,35 @@ function AuthRegister() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { toast } = useToast();
-
+ const validateEmail = (email) => {
+    if(email===null || email===undefined || email==='') return undefined;
+    const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
+    return emailRegex.test(email);
+  };
   function onSubmit(event) {
     event.preventDefault();
     let messageError='';
+    if(formData.userName===''){
+          messageError='The username is required\n';
+    }
+     if(formData.email===''){
+       messageError=messageError+'The email is required\n';
+     }
+     if(formData.password===''){
+       messageError=messageError+'The password is required\n';
+     }
+
+     if(validateEmail(formData.email)===false){
+       messageError=messageError+'The email format is invalid\n';
+     }
+     if(messageError!==''){
+        toast({
+       title: messageError,
+       variant: "destructive",
+     });
+     
+     return ;
+     }
     dispatch(registerUser(formData)).then((data) => {
       if (data?.payload?.success) {
         toast({
@@ -28,24 +53,14 @@ function AuthRegister() {
         });
         navigate("/auth/login");
       } else {
-        if(formData.userName===''){
-          messageError='The username is required\n';
-        }
-        if(formData.email===''){
-          messageError=messageError+'The email is required\n';
-        }
-        if(formData.password===''){
-          messageError=messageError+'The password is required\n';
-        }
+       
         toast({
-          title: messageError!==''?messageError:data?.payload?.message,
+          title: data?.payload?.message,
           variant: "destructive",
         });
       }
     });
   }
-
-  console.log(formData);
 
   return (
     <div className="mx-auto w-full max-w-md space-y-6">

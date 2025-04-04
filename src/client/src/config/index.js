@@ -11,7 +11,7 @@ export const registerFormControls = [
     label: "Email",
     placeholder: "Enter your email",
     componentType: "input",
-    type: "email",
+    type: "text",
   },
   {
     name: "password",
@@ -28,7 +28,7 @@ export const loginFormControls = [
     label: "Email",
     placeholder: "Enter your email",
     componentType: "input",
-    type: "email",
+    type: "text",
   },
   {
     name: "password",

@@ -15,10 +15,31 @@ function AuthLogin() {
   const [formData, setFormData] = useState(initialState);
   const dispatch = useDispatch();
   const { toast } = useToast();
-
+  const validateEmail = (email) => {
+    if(email===null || email===undefined) return undefined;
+    const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
+    return emailRegex.test(email);
+  };
   function onSubmit(event) {
     event.preventDefault();
-
+    let messageError='';
+    if(formData.email===''){
+      messageError=messageError+'The email is required\n';
+    }
+    if(formData.password===''){
+      messageError=messageError+'The password is required\n';
+    }
+    if(validateEmail(formData.email)===false){
+      messageError=messageError+'The email format is invalid\n';
+    }
+    if(messageError!==''){
+       toast({
+      title: messageError,
+      variant: "destructive",
+    });
+    
+    return ;
+    }
     dispatch(loginUser(formData)).then((data) => {
       if (data?.payload?.success) {
         toast({
